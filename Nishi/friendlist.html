@@ -1,0 +1,34 @@
+<html>
+    <body>
+        
+        <div id="header">Friend List Table</div>
+        <div id="output"></div>
+        <script>
+        
+            var myarr=["Nishi","Hezal","Meet","Fenil","Shivangini","Sneha","Viren","Nishant"];
+            var html="<table border='1'>";
+            list();
+            
+            function list(){
+                for(var x=0;x<myarr.length;x++){
+                    html+="<tr class='trcl'><td>"+(x+1)+"</td><td>"+myarr[x]+"</td><td>"+0+"</td></tr>";    
+                }
+                
+                html+="</table>";
+                document.getElementById("output").innerHTML=html;
+                
+                var el=document.getElementsByClassName("trcl");
+                
+                for(var i=0;i<el.length;i++){
+                    el[i].onclick=function(){
+                        this.children[2].innerText++;                      
+                        
+                    }
+                }                
+                
+            }
+           
+        </script>
+    
+    </body>
+</html>

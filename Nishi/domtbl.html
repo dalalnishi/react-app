@@ -1,0 +1,29 @@
+<html>
+	<head>
+			
+	</head>
+	<body>
+		<table id="tbl" border=1>		
+		</table>
+		<script>
+			var tid=document.getElementById("tbl");
+			var row=prompt("Enter no. of Rows?");
+			var columns=prompt("Enter no. of Columns?");
+			
+			for(var i=0;i<Number(row);i++){
+				var tr=document.createElement("tr");
+				
+				for(var j=0;j<Number(columns);j++){
+					var td=document.createElement("td");
+					
+					var tdtxt=document.createTextNode("hello");
+					td.appendChild(tdtxt);
+					tr.appendChild(td);
+				}
+				
+				tid.appendChild(tr);
+			}
+			
+		</script>
+	</body>
+</html>

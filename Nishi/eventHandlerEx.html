@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <div id="message"></div>
+        
+        <div class="output">Test 1</div>
+        <div class="output">Test 2</div>
+        <div class="output">Test 3</div>
+        <div class="output">Test 4</div>
+        <div class="output">Test 5</div>
+        <div class="output">Test 6</div>
+        
+        <script>
+            var divList=document.getElementsByClassName('output');
+            var msg=document.getElementById('message');
+            
+            for(var x=0;x<divList.length;x++){
+                var div=divList[x];
+                
+                div.onclick=function(){
+                    msg.innerHTML=event.target.innerHTML;
+                }
+            }
+        </script>
+    </body>
+</html>

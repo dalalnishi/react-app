@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<style>			
+			button{
+					height:70px;
+					width:80px;
+					font-size:20px;
+			}
+			
+			input{
+				margin-top:40px;
+				width:340px;
+				height:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<input type="text" readonly id="input"/>
+			<br/>
+			<button onclick="spop(this.value)" value="MC">MC</button>
+			<button onclick="spop(this.value)" value="MR">MR</button>
+			<button onclick="spop(this.value)" value="M+">M+</button>
+			<button onclick="spop(this.value)" value="M-">M-</button>
+			<br/>
+			<button onclick="spop(this.value)" value="CE">CE</button>
+			<button onclick="spop(this.value)" value="C">C</button>
+			<button onclick="spop(this.value)" value="<-"><-</button>
+			<button onclick="operator(this.value)" value="/">/</button>
+			<br/>
+			<button onclick="num(this.value)" value="7">7</button>
+			<button onclick="num(this.value)" value="8">8</button>
+			<button onclick="num(this.value)" value="9">9</button>
+			<button onclick="operator(this.value)" value="*">*</button>
+			<br/>
+			<button onclick="num(this.value)" value="4">4</button>
+			<button onclick="num(this.value)" value="5">5</button>
+			<button onclick="num(this.value)" value="6">6</button>
+			<button onclick="operator(this.value)" value="-">-</button>
+			<br/>
+			<button onclick="num(this.value)" value="1">1</button>
+			<button onclick="num(this.value)" value="2">2</button>
+			<button onclick="num(this.value)" value="3">3</button>
+			<button onclick="operator(this.value)" value="+">+</button>
+			<br/>
+			<button onclick="operator(this.value)" value="+-">+-</button>
+			<button onclick="num(this.value)" value="0">0</button>
+			<button onclick="operator(this.value)" value=".">.</button>
+			<button onclick="equalop()" value="=">=</button>
+		</div>
+		
+		<script>
+			var input=document.getElementById("input");
+			var ans=0;
+			var op="";
+			var m=0;
+			var mf=0;
+			
+			function num(numb){				
+				input.value+=numb;
+			}
+			
+			function operator(opr){
+				ans=Number(input.value);
+				op=opr;
+				input.value="";
+			}
+			
+			function equalop(){
+				var no2=Number(input.value);
+				switch(op){
+					case "+" :
+						ans+=no2;						
+						break;
+					case "-" :
+						ans-=no2;						
+						break;
+					case "*" :
+						ans*=no2;						
+						break;
+					case "/" :
+						ans/=no2;						
+						break;
+				}
+				input.value=ans;
+				if(mf==1){
+					m+=ans;
+				}				
+			}
+			
+			function spop(sp){
+				
+				switch(sp){
+					case "CE" :
+						input.value="0";
+						break;
+						
+					case "<-" :
+						var inp = input.value;						
+						var s= inp.substr(0,inp.length-1);
+						if(s.length<=0){
+							input.value="0";
+						}else{
+							input.value=s;
+						}
+						break;	
+						
+					case "MR" :
+						mf=1;
+						break;	
+						
+					case "MC" :
+						input.value=m;
+						break;
+				}
+										
+			}
+			
+		</script>
+	</body>
+
+</html>

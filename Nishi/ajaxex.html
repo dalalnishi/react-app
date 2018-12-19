@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script>
+			function suggestfun(){
+			
+				var r = new XMLHttpRequest();
+				
+				r.onreadystatechange = function(){
+					//alert(this.status+" "+this.readyState);
+					if(this.readyState == 4 && this.status == 200){
+						document.getElementById("demo").innerHTML = this.responseText;
+					}else{
+						document.getElementById("demo").innerHTML="Cant Reach!!";
+					}
+				};
+				r.open("GET","ajaxinfo.html",true);
+				r.send();
+			}
+		</script>
+	</head>
+	<body>
+		
+		<button onclick="suggestfun()">Click Here!!!</button>
+		<div id="demo"> </div>
+		
+	</body>
+	
+</html>

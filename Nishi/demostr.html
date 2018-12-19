@@ -1,0 +1,37 @@
+<html>
+
+<body>
+		<input type="text" id="str1" placeholder="Enter any String">
+		<p>Select from following:</p>
+		<ul>
+			<li onclick="len()">Length</li>
+			<li onclick="upr()">Upper case</li>
+			<li onclick="lwr()">Lower case</li>
+			<li onclick="rep()">Replace(hello with hyyy)</li>
+		</ul>
+		
+		<div id="res"></div>
+</body>
+
+<script>
+	function len(){
+		var s=document.getElementById("str1").value;
+		document.getElementById("res").innerHTML=s.length;
+	}
+	
+	function upr(){
+		var s=document.getElementById("str1").value;
+		document.getElementById("res").innerHTML=s.toUpperCase();
+	}
+	
+	function lwr(){
+		var s=document.getElementById("str1").value;
+		document.getElementById("res").innerHTML=s.toLowerCase();
+	}
+	
+	function rep(){
+		var s=document.getElementById("str1").value;
+		document.getElementById("res").innerHTML=s.replace("hello","hyyy");
+	}
+</script>
+</html>

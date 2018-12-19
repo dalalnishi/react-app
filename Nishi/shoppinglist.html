@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<input type="text" id="additem"/>
+		<button onclick="add()"> Add Item </button>
+		<div id="output"></div>
+			
+		<script>
+			
+			var items=[];
+			
+			function add(){
+				
+				var item=document.getElementById("additem").value;
+				items.push(item);
+				for(var i=0;i<items.length;i++){
+					document.getElementById("output").innerHTML=i+" "+items[i]+"<br/>";
+				}				
+			}
+			
+		</script>
+	</body>
+
+</html>

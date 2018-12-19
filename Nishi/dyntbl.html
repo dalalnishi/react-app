@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Dynamic Table</title>
+	</head>
+	<body>
+		<div id="demo"></div>
+		<script>
+			var row=prompt("No. of Rows?");
+			var column=prompt("No. of columns?");
+			
+			var tbl="<table border='1'>";
+			
+			for(var i=0;i<Number(row);i++){
+				tbl+="<tr>";
+				for(var j=0;j<Number(column);j++){
+					tbl+="<td>"+Math.floor(Math.random()*3)+"</td>";
+				}
+				tbl+="</tr>";
+			}
+			document.getElementById("demo").innerHTML=tbl;
+		</script>
+	</body>
+</html>

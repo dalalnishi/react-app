@@ -1,0 +1,79 @@
+<html>
+	
+	<body id="bid">
+		<script>
+		
+			var flag=false;
+			var btng=[];
+			var cnt=0;
+			var bd;
+			play();
+			
+		function play(){
+			
+			for(var i=0;i<3;i++){
+				bd=document.getElementById("bid");
+			
+				for(var j=0;j<3;j++){
+					
+					var b=document.createElement("input");
+					b.type="button";
+					b.style.height="35px";
+					b.style.width="50px";
+					b.onclick=function(){
+						
+						if(flag){
+							this.value="Y";
+							flag=false;
+							
+						}else{
+							this.value="X";
+							flag=true;
+						}
+						this.disabled="true";
+						cnt++;
+						check();
+						
+					}
+					
+					bd.appendChild(b);
+					
+				}
+				var br=document.createElement("br");
+				bd.appendChild(br);
+				btng=document.getElementsByTagName("input");
+				}
+			}
+					
+			function check(){
+				
+				if(
+				((btng[0].value!="" && btng[1].value!="" && btng[2].value!="") && (btng[0].value==btng[1].value && btng[0].value==btng[2].value)) ||
+				((btng[0].value!="" && btng[3].value!="" && btng[6].value!="") && (btng[0].value==btng[3].value && btng[0].value==btng[6].value)) ||
+				((btng[6].value!="" && btng[7].value!="" && btng[8].value!="") && (btng[6].value==btng[7].value && btng[6].value==btng[8].value)) ||
+				((btng[2].value!="" && btng[6].value!="" && btng[8].value!="") && (btng[2].value==btng[6].value && btng[2].value==btng[8].value)) ||
+				((btng[2].value!="" && btng[4].value!="" && btng[6].value!="") && (btng[2].value==btng[4].value && btng[2].value==btng[6].value)) ||
+				((btng[1].value!="" && btng[4].value!="" && btng[7].value!="") && (btng[1].value==btng[4].value && btng[1].value==btng[7].value)) ||
+				((btng[0].value!="" && btng[4].value!="" && btng[8].value!="") && (btng[0].value==btng[4].value && btng[0].value==btng[8].value)) 
+				){
+					if(flag){
+						alert("X is winner");
+						
+					}else{
+						alert("Y is winner");
+					}
+					bd.innerHTML="";
+					play();
+				}
+				else if(cnt>=9){
+					alert("Its a Draw.");
+					play();
+				}
+	
+			}
+			
+		</script>
+		
+	</body>
+
+</html>

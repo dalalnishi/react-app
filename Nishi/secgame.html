@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<div id="output"></div>
+		<button onclick="startgame()">Start Game</button>
+		
+		<script>
+			var sec="JavaScript"; 
+			function startgame(){
+				guess(prompt("What is the Secret Word?"));
+			}
+			
+			function guess(secret){
+				if(secret==sec){
+					document.getElementById("output").innerHTML="Guessed It..";
+				}else{
+					guess(prompt("Try Again?"));
+				}
+			}
+		</script>
+	</body>
+
+</html>

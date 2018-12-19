@@ -1,0 +1,29 @@
+<html>
+    <body>
+        
+        <div id="output"></div>
+        <div id="message"></div>
+        <input type="file" multiple onchange="updFiles(this.files)"/>
+        
+        <script>
+            if(window.FileReader){
+               document.getElementById('message').innerHTML="File Reader is available!!!";
+            }else{
+               document.getElementById('message').innerHTML="File Reader is not available!!!"; 
+            }
+        
+            function updFiles(files){
+                for(x=0;x<files.length;x++){
+                    var fReader=new FileReader();
+                    var fname=files[x].name;
+                    fReader.onload=function(){
+                        document.getElementById('output').innerHTML+=fname; 
+                        document.getElementById('output').innerHTML+=event.target.result;
+                    }
+                    fReader.readAsText(files[x]);
+                }
+            }
+        </script>
+    
+    </body>
+</html>

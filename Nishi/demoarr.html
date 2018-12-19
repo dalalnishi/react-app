@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<div id="values"></div>
+		
+		<script>
+			var person={first:'xyz',last:'abc'};
+			//window.alert(typeof(person));
+			var cars=["Ciaz","Swift","BMW"];
+			//document.getElementById("values").innerHTML=person.first+" "+person.last;
+			//document.getElementById("values").innerHTML=cars.sort();
+			
+			var len=cars.length;
+			var i,txtstr="";
+			for(i=0;i<len;i++){
+				txtstr+="<li>"+cars[i]+"</li>";
+			}
+			
+			document.getElementById("values").innerHTML=txtstr;
+		</script>
+	</body>
+</html>

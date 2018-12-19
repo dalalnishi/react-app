@@ -1,0 +1,29 @@
+<html>
+
+	<body>
+		<div id="output"></div>
+		<button onclick="startgame()">Start Game</button>
+		<script>
+			var arr=["Hey","Hello","Hiii","Bonjour"];
+			
+			function startgame(){
+				shuffle(arr);
+				document.getElementById("output").innerHTML+=arr+"<br/>";
+			}			
+			
+			function shuffle(a){
+			
+				for(var x=0;x<a.length;x++){
+					var shf=Math.floor(Math.random()*(x));
+					
+					var temp=a[x];
+					a[x]=a[shf];
+					a[shf]=temp;				
+					
+				}
+				return a;
+				
+			}
+		</script>
+	</body>
+</html>

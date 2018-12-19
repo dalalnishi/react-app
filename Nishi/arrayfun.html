@@ -1,0 +1,19 @@
+<html>
+	<body>
+	<div id="demo"></div>
+		<script>
+			var arr=["aa","bb","cc","dd","ee","ff","aa","aa","bb"];
+			var val=[];
+			var k=0;
+			
+			var len=arr.length;
+			
+			for(var i=0;i<len;i++){
+				if(!val.includes(arr[i])){
+					val.push(arr[i]);
+				}
+			}
+			document.getElementById("demo").innerHTML=val;
+		</script>
+	</body>
+</html>
