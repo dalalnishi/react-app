@@ -21,11 +21,11 @@ class Togglenames extends React.Component{
                 { name: 'Meet', age: 21 }
             ]    
         });
-    }
-    
+    };
+
     tglNames = () =>{
         const showstat = this.state.showPersons;
-        this.setState({showPersons : !showstat });
+        this.setState({ showPersons : !showstat });
     }
 
     render(){
